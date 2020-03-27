@@ -28,7 +28,7 @@ ng g component component-name
 
 htmlとcssは通常のものと同じように記述可能(cssはこのコンポーネントのみに適用される）。
 foo.component.tsでhtmlとcssを読み込んで接続する。
-```typescript: foo.component.ts
+```typescript:foo.component.ts
 @Component({
   selector: 'app-foo',
   templateUrl: './foo.component.html',
@@ -56,7 +56,7 @@ ngModelを使うためにapp.modules.tsにFormsModuleをインポートし、
 <p> {{foo.bar}} </p>
 <input [(ngModel)]="foo.bar">
 ```
-```TypeScript: app.modules.ts
+```typescript:app.modules.ts
 import { FormsModule } from '@angular/forms'; // <--ここにngModelが含まれる
 
 //@ngModule内
@@ -69,12 +69,12 @@ imports: [
 
 ### リストなどをfor文で回して表示する
 *ngForで生成できる。頭のアスタリスクを忘れないように。
-```html: foo.component.html
+```html:foo.component.html
 <ul>
   <li *ngFor="let user of users"> {{ user.name }} </li>
 <ul>
 ```
-```TypeScript: foo.component.ts (example)
+```typescript:foo.component.ts (example)
 interface User {
   name: string;
   age: number;
@@ -103,12 +103,12 @@ export class foo implements OnInit {
 
 ### 条件で表示非表示を切り替える(v-if的な)
 *ngif　で可能。アスタリスクを忘れないように。
-```html: foo.component.html
+```html:foo.component.html
 <p *ngif="isShow"> Hello World </p>
 
 ```
 
-```TypeScript: foo.component.ts
+```typescript:foo.component.ts
 export class foo implements OnInit {
   isShow: boolean = true;
 
@@ -122,13 +122,13 @@ export class foo implements OnInit {
 ### イベントバインディング
 (例)　クリックイベント
 
-```html: foo.component.html
+```html:foo.component.html
 <p *ngif="isShow"> Hello World </p>
 <button (click)="onClick()">click!</button>
 
 ```
 
-```TypeScript: foo.component.ts
+```typescript:foo.component.ts
 export class foo implements OnInit {
   isShow: boolean = true;
 
@@ -145,13 +145,13 @@ export class foo implements OnInit {
 
 ### クラスバインディング
 
-```html: foo.component.html
+```html:foo.component.html
 <p [class.isSelected = "isSelected"]> Hello World </p>
 <button (click)="onClick()">click!</button>
 
 ```
 
-```TypeScript: foo.component.ts
+```typescript:foo.component.ts
 export class foo implements OnInit {
   isSelected: boolean = false;
 

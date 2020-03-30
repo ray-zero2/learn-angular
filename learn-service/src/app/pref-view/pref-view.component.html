@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <th>都道府県</th>
+    <th>面積(km2)</th>
+    <th>人口</th>
+  </tr>
+  <tr *ngFor="let item of data" (click)="onClickRow(item)" [style.background-color]="rowBackColor(item)">
+    <td>{{item.prefName}}</td>
+    <td class='td_num'>{{item.prefArea| number : '.2'}}</td>
+    <td class='td_num'>{{item.prefPopulation| number}}</td>
+  </tr>
+</table>

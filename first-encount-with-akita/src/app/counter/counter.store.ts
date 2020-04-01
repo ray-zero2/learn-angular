@@ -3,11 +3,13 @@ import { Store, StoreConfig } from '@datorama/akita';
 
 export interface CounterState {
   key: string;
+  favorite: number;
 }
 
 export function createInitialState(): CounterState {
   return {
-    key: ''
+    key: '',
+    favorite: 0
   };
 }
 
@@ -20,4 +22,3 @@ export class CounterStore extends Store<CounterState> {
   }
 
 }
-
